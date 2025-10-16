@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>IT-Security Training — Testseite</title>
+  <style>
+    body{font-family:system-ui,Segoe UI,Arial;margin:0;padding:0;background:#f6f8fb;color:#122;}
+    .wrap{max-width:760px;margin:48px auto;padding:28px;background:#fff;border-radius:10px;box-shadow:0 6px 24px rgba(18,34,60,0.08)}
+    h1{margin-top:0;color:#0b3b66}
+    .alert{background:#fff4d6;border-left:6px solid #f2c94c;padding:12px;margin:14px 0;border-radius:6px}
+    .btn{display:inline-block;padding:10px 16px;border-radius:8px;text-decoration:none;background:#0b7cd0;color:#fff;margin-top:12px}
+    .result{margin-top:18px;padding:12px;border-radius:8px;display:none}
+    .good{background:#e6ffed;border:1px solid #7ae39a;color:#064b21}
+    .bad{background:#ffe6e6;border:1px solid #ff9a9a;color:#6b0b0b}
+    small{color:#666}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <h1>HTL Salzburg — IT-Security: Trainingsseite</h1>
+
+    <div class="alert">
+      <strong>Wichtig:</strong> Dies ist eine **Schulungs-/Übungsseite**. Es werden <em>keine</em> echten Anmeldedaten erfasst.
+    </div>
+
+    <p>Diese Testseite demonstriert, wie gefälschte Systemmeldungen aussehen können. Klicke unten, um das Ergebnis zu sehen — du wirst sofort darüber informiert, ob dies ein sicherer Vorgang ist und welche Warnsignale zählen.</p>
+
+    <button class="btn" id="simulate">Simuliere Systemmeldung</button>
+
+    <div id="result" class="result"></div>
+
+    <h3>Was du beachten solltest</h3>
+    <ul>
+      <li>Prüfe die Absender-Domain (Buchstabenvertauschungen, zusätzliche Zeichen).</li>
+      <li>Öffne keine Anhänge ohne Verifikation.</li>
+      <li>Bei Zahlungsanfragen: immer Rückbestätigung per bekanntem Kanal.</li>
+    </ul>
+
+    <hr>
+    <small>Bei Fragen: it-helpdesk@htl-salzburg.local</small>
+  </main>
+
+  <script>
+    document.getElementById('simulate').addEventListener('click', function(){
+      const result = document.getElementById('result');
+      // Simulierter "Klick" führt sofort zur Aufklärung — KEINE DATEN SAMMELN
+      result.style.display='block';
+      result.className='result good';
+      result.innerHTML = '<strong>Hinweis:</strong> Dies war eine simulierte Systemmeldung im Rahmen eines Trainings. <br><br>'
+        + 'Was hätte dich misstrauisch machen sollen? <ul>'
+        + '<li>Unerwarteter Absender</li>'
+        + '<li>Dringliche Formulierungen („sofort“, „innerhalb 1 Stunde“)</li>'
+        + '<li>Links, deren Domain nicht übereinstimmt</li></ul>'
+        + '<br><em>Tipp:</em> Bei Unsicherheit Rückfragen über bekannten Kontaktkanal (nicht die angegebene Nummer/Link in der Nachricht).</p>';
+    });
+  </script>
+</body>
+</html>
